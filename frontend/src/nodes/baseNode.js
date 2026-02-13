@@ -5,41 +5,46 @@ export const BaseNode = ({
       inputs = [],
       outputs = [],
       children,
-      width = 200,
+      width = 220,
 }) => {
       return (
             <div
-                  style={{
-                        width,
-                        padding: 10,
-                        border: '1px solid black',
-                        borderRadius: 4,
-                        background: 'white',
-                  }}
+                  className="relative rounded-xl border border-gray-200 bg-white shadow-sm"
+                  style={{ width }}
             >
-                  <div style={{ fontWeight: 'bold', marginBottom: 8 }}>
-                        {title}
+                  {/* Header */}
+                  <div className="px-3 py-2 border-b border-gray-100 bg-gray-50 rounded-t-xl">
+                        <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
+                              {title}
+                        </span>
                   </div>
 
+                  {/* Input handles */}
                   {inputs.map((input, index) => (
                         <Handle
                               key={input}
                               id={input}
                               type="target"
                               position={Position.Left}
-                              style={{ top: 40 + index * 20 }}
+                              className="!w-2.5 !h-2.5 !bg-blue-500 !border-white"
+                              style={{ top: 52 + index * 22 }}
                         />
                   ))}
 
-                  <div>{children}</div>
+                  {/* Content */}
+                  <div className="p-3 space-y-2 text-xs text-gray-700">
+                        {children}
+                  </div>
 
+                  {/* Output handles */}
                   {outputs.map((output, index) => (
                         <Handle
                               key={output}
                               id={output}
                               type="source"
                               position={Position.Right}
-                              style={{ top: 40 + index * 20 }}
+                              className="w-2.5 h-2.5 !bg-emerald-500 !border-white"
+                              style={{ top: 52 + index * 22 }}
                         />
                   ))}
             </div>

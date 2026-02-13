@@ -8,7 +8,9 @@ export const PassThroughNode = ({ id }) => {
                   inputs={[`${id}-input`]}
                   outputs={[`${id}-output`]}
             >
-                  <span>Passes data forward</span>
+                  <div className="text-xs text-gray-600 leading-snug">
+                        Passes input directly to output
+                  </div>
             </BaseNode>
       );
 };

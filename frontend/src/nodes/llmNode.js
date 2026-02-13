@@ -1,54 +1,40 @@
-// // llmNode.js
-
-// import { Handle, Position } from 'reactflow';
-
-// export const LLMNode = ({ id, data }) => {
-
-//   return (
-//     <div style={{width: 200, height: 80, border: '1px solid black'}}>
-//       <Handle
-//         type="target"
-//         position={Position.Left}
-//         id={`${id}-system`}
-//         style={{top: `${100/3}%`}}
-//       />
-//       <Handle
-//         type="target"
-//         position={Position.Left}
-//         id={`${id}-prompt`}
-//         style={{top: `${200/3}%`}}
-//       />
-//       <div>
-//         <span>LLM</span>
-//       </div>
-//       <div>
-//         <span>This is a LLM.</span>
-//       </div>
-//       <Handle
-//         type="source"
-//         position={Position.Right}
-//         id={`${id}-response`}
-//       />
-//     </div>
-//   );
-// }
-
-// // llmNode.js
-
-
+// llmNode.js
 import { BaseNode } from './baseNode';
 
-export const LLMNode = ({ id, data }) => {
-
+export const LLMNode = ({ id }) => {
   return (
-    <>
-      <BaseNode title="LLM"
-        inputs={[`${id}-system`, `${id}-prompt`]}
-        outputs={[`${id}-response`]}
-      >
-        <span>This is LLM</span>
-      </BaseNode>
-    </>
+    <BaseNode
+      title="LLM"
+      inputs={[`${id}-system`, `${id}-prompt`]}
+      outputs={[`${id}-response`]}
+    >
+      <div className="flex flex-col gap-2 text-xs text-gray-600">
 
+        {/* Description */}
+        <p className="leading-snug">
+          Large Language Model
+        </p>
+
+        <div className="flex flex-col gap-1">
+          <label className="text-[10px] font-medium text-gray-500">
+            Model
+          </label>
+          <select
+
+            className="
+            w-full rounded-md border border-gray-300
+            px-2 py-1 text-xs text-gray-700
+            bg-white
+            focus:outline-none focus:ring-1 focus:ring-blue-500
+          "
+          >
+            <option value="Text">Gemini</option>
+            <option value="Text">Claude</option>
+            <option value="Text">GPT-OSS</option>
+          </select>
+        </div>
+
+      </div>
+    </BaseNode>
   );
-}
+};
