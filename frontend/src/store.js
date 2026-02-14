@@ -40,7 +40,8 @@ export const useStore = create((set, get) => ({
       edges: addEdge({ ...connection, type: 'smoothstep', animated: true, markerEnd: { type: MarkerType.Arrow, height: '20px', width: '20px' } }, get().edges),
     });
   },
-  //add
+
+  //update the node data when creating variable handle in textNode
   updateNodeData: (id, newData) =>
     set((state) => ({
       nodes: state.nodes.map((node) =>

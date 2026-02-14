@@ -17,14 +17,12 @@ export const BaseNode = ({
                   className="relative rounded-xl border border-gray-200 bg-white shadow-sm"
                   style={{ width }}
             >
-                  {/* Header */}
                   <div className="px-3 py-2 border-b border-gray-100 bg-gray-50 rounded-t-xl">
                         <span className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
                               {title}
                         </span>
                   </div>
 
-                  {/* NORMAL INPUT HANDLES ONLY */}
                   {inputs.map((id, index) => (
                         <Handle
                               key={id}
@@ -36,12 +34,10 @@ export const BaseNode = ({
                         />
                   ))}
 
-                  {/* CONTENT */}
                   <div className="p-3 space-y-2 text-xs text-gray-700">
                         {children}
                   </div>
 
-                  {/* OUTPUT HANDLES */}
                   {outputs.map((id, index) => (
                         <Handle
                               key={id}

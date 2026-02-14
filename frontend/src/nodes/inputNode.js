@@ -30,7 +30,6 @@ export const InputNode = ({ id, data }) => {
         />
       </div>
 
-      {/* Type selector */}
       <div className="flex flex-col gap-1">
         <label className="text-[10px] font-medium text-gray-500">
           Type

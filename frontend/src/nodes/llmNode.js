@@ -10,8 +10,8 @@ export const LLMNode = ({ id }) => {
     >
       <div className="flex flex-col gap-2 text-xs text-gray-600">
 
-        {/* Description */}
-        <p className="leading-snug">
+
+        <p className="  text-[10px] font-medium text-gray-500">
           Large Language Model
         </p>
 

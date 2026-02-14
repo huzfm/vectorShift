@@ -144,9 +144,7 @@ export const TextNode = ({ id, data }) => {
         </div>
       ))}
 
-      {/* ============================
-         BASE NODE
-      ============================ */}
+
       <BaseNode
         title="Text"
         width={nodeWidth}
@@ -193,7 +191,6 @@ export const TextNode = ({ id, data }) => {
             />
           </div>
 
-          {/* Width measurement */}
           <div
             ref={measureRef}
             className="absolute invisible whitespace-pre text-xs px-2"
