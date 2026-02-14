@@ -14,6 +14,7 @@ export const OutputNode = ({ id, data }) => {
     <BaseNode
       title="Output"
       inputs={[`${id}-value`]}
+
     >
       <div className="flex flex-col gap-1">
         <label className="text-[10px] font-medium text-gray-500">

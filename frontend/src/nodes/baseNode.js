@@ -2,10 +2,10 @@
 import { Handle, Position } from 'reactflow';
 
 export const BaseNode = ({
-      title,
-      inputs = [],
-      outputs = [],
-      children,
+      title,             // title of node
+      inputs = [],       // no of inputs 
+      outputs = [],      // no of outputs
+      children,          //content that is render inside the node
       width = 220,
 }) => {
       const HEADER_HEIGHT = 40;
