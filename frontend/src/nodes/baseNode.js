@@ -1,3 +1,4 @@
+// nodes/baseNode.jsx
 import { Handle, Position } from 'reactflow';
 
 export const BaseNode = ({
@@ -7,6 +8,10 @@ export const BaseNode = ({
       children,
       width = 220,
 }) => {
+      const HEADER_HEIGHT = 40;
+      const START_Y = HEADER_HEIGHT + 16;
+      const GAP = 28;
+
       return (
             <div
                   className="relative rounded-xl border border-gray-200 bg-white shadow-sm"
@@ -19,32 +24,32 @@ export const BaseNode = ({
                         </span>
                   </div>
 
-                  {/* Input handles */}
-                  {inputs.map((input, index) => (
+                  {/* NORMAL INPUT HANDLES ONLY */}
+                  {inputs.map((id, index) => (
                         <Handle
-                              key={input}
-                              id={input}
+                              key={id}
+                              id={id}
                               type="target"
                               position={Position.Left}
-                              className="!w-2.5 !h-2.5 !bg-blue-500 !border-white"
-                              style={{ top: 52 + index * 22 }}
+                              className="!w-2.5 !h-2.5 !bg-blue-500"
+                              style={{ top: START_Y + index * GAP }}
                         />
                   ))}
 
-                  {/* Content */}
+                  {/* CONTENT */}
                   <div className="p-3 space-y-2 text-xs text-gray-700">
                         {children}
                   </div>
 
-                  {/* Output handles */}
-                  {outputs.map((output, index) => (
+                  {/* OUTPUT HANDLES */}
+                  {outputs.map((id, index) => (
                         <Handle
-                              key={output}
-                              id={output}
+                              key={id}
+                              id={id}
                               type="source"
                               position={Position.Right}
-                              className="w-2.5 h-2.5 !bg-emerald-500 !border-white"
-                              style={{ top: 52 + index * 22 }}
+                              className="!w-2.5 !h-2.5 !bg-emerald-500"
+                              style={{ top: START_Y + index * GAP }}
                         />
                   ))}
             </div>

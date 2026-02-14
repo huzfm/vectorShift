@@ -13,7 +13,7 @@ export const InputNode = ({ id, data }) => {
       title="Input"
       outputs={[`${id}-value`]}
     >
-      {/* Name field */}
+
       <div className="flex flex-col gap-1">
         <label className="text-[10px] font-medium text-gray-500">
           Name
