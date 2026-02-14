@@ -67,9 +67,7 @@ export const TextNode = ({ id, data }) => {
   const START_Y = HEADER_HEIGHT + 16;
   const GAP = 28;
 
-  /* ============================
-     Auto-resize textarea + width
-  ============================ */
+
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
